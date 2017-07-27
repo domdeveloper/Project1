@@ -1,0 +1,17 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="menu" class="com.udemy.actions.MenuAction">
+			<result name="success">menu.jsp</result>
+		</action>
+		<action name="mymealplan" class="com.udemy.actions.MenuReportAction">
+			<result name="input" type="chain">menu</result>
+			<result name="success">menuReport.jsp</result>
+		</action>
+	</package>
+</struts>
